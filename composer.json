@@ -1,0 +1,54 @@
+{
+    "name"             : "yoeunes/commentable",
+    "license"          : "MIT",
+    "description"      : "This package helps you to add user based comments system to your model.",
+    "homepage"         : "https://github.com/yoeunes/commentable",
+    "keywords"         : [
+        "laravel",
+        "commentable",
+        "comment",
+        "approve",
+        "laravel 5"
+    ],
+    "authors"          : [
+        {
+            "name"    : "Younes Khoubza",
+            "email"   : "younes.khoubza@gmail.com",
+            "homepage": "https://dalilbook.com",
+            "role"    : "Developer"
+        }
+    ],
+    "require"          : {
+        "php": ">=7.0.0",
+        "illuminate/database": "^5.5",
+        "illuminate/support": "^5.5"
+    },
+    "require-dev"      : {
+        "laracasts/testdummy": "^2.3",
+        "orchestra/testbench": "^3.5",
+        "phpunit/phpunit"    : "^6.5"
+    },
+    "autoload"         : {
+        "psr-4": {
+            "Yoeunes\\Commentable\\": "src"
+        },
+        "files": ["src/helpers.php"]
+    },
+    "autoload-dev"     : {
+        "psr-4": {
+            "Yoeunes\\Commentable\\Tests\\": "tests"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable"    : true,
+    "extra"            : {
+        "laravel": {
+            "providers": [
+                "Yoeunes\\Commentable\\CommentableServiceProvider"
+            ]
+        }
+    },
+    "config"           : {
+        "sort-packages": true
+    }
+}
