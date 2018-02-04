@@ -2,12 +2,12 @@
 
 namespace Yoeunes\Commentable\Traits;
 
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\Relations\Relation;
-use Illuminate\Database\Query\JoinClause;
 use Yoeunes\Commentable\CommentBuilder;
-use Yoeunes\Commentable\CommentQueryBuilder;
 use Yoeunes\Commentable\Models\Comment;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Query\JoinClause;
+use Yoeunes\Commentable\CommentQueryBuilder;
+use Illuminate\Database\Eloquent\Relations\Relation;
 
 trait Commentable
 {

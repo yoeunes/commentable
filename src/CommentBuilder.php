@@ -3,13 +3,13 @@
 namespace Yoeunes\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\Relation;
-use Yoeunes\Commentable\Exceptions\CommentableModelNotFound;
-use Yoeunes\Commentable\Exceptions\EmptyUser;
-use Yoeunes\Commentable\Exceptions\ModelDoesNotUseCommentableTrait;
-use Yoeunes\Commentable\Exceptions\UserDoestNotHaveID;
 use Yoeunes\Commentable\Models\Comment;
 use Yoeunes\Commentable\Traits\Commentable;
+use Yoeunes\Commentable\Exceptions\EmptyUser;
+use Illuminate\Database\Eloquent\Relations\Relation;
+use Yoeunes\Commentable\Exceptions\UserDoestNotHaveID;
+use Yoeunes\Commentable\Exceptions\CommentableModelNotFound;
+use Yoeunes\Commentable\Exceptions\ModelDoesNotUseCommentableTrait;
 
 class CommentBuilder
 {
@@ -70,7 +70,7 @@ class CommentBuilder
         throw_if(empty($this->commentable->id), CommentableModelNotFound::class, 'Commentable model not found');
 
         $data = [
-            'user_id'       => $this->user,
+            'user_id'          => $this->user,
             'commentable_id'   => $this->commentable->id,
             'commentable_type' => Relation::getMorphedModel(get_class($this->commentable)) ?? get_class($this->commentable),
         ];

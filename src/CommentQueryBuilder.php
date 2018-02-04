@@ -3,12 +3,12 @@
 namespace Yoeunes\Commentable;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphMany;
-use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\JoinClause;
-use Yoeunes\Commentable\Exceptions\ModelDoesNotUseCommentableTrait;
-use Yoeunes\Commentable\Exceptions\UserDoestNotHaveID;
 use Yoeunes\Commentable\Traits\Commentable;
+use Illuminate\Database\Eloquent\Relations\Relation;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Yoeunes\Commentable\Exceptions\UserDoestNotHaveID;
+use Yoeunes\Commentable\Exceptions\ModelDoesNotUseCommentableTrait;
 
 class CommentQueryBuilder
 {
