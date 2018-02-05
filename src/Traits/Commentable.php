@@ -41,7 +41,7 @@ trait Commentable
             ->leftJoin('comments', function (JoinClause $join) {
                 $join
                     ->on('comments.commentable_id', $this->getTable() . '.id')
-                    ->where('comments.commentable_type', Relation::getMorphedModel(__CLASS__) ?? __CLASS__);
+                    ->where('comments.commentable_type', in_array(__CLASS__, Relation::morphMap()) ? array_search(__CLASS__, Relation::morphMap()) : __CLASS__);
             })
             ->addSelect(DB::raw('COUNT(comments.id) as count_comments'))
             ->groupBy($this->getTable(). '.id')
