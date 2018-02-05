@@ -64,7 +64,7 @@ class CommentQueryBuilder
             ->leftJoin('comments', function (JoinClause $join) use ($commentable) {
                 $join
                     ->on('comments.commentable_id', $commentable->getTable() . '.id')
-                    ->where('comments.commentable_type', in_array(__CLASS__, Relation::morphMap()) ? array_search(__CLASS__, Relation::morphMap()) : __CLASS__);
+                    ->where('comments.commentable_type', in_array(get_class($commentable), Relation::morphMap()) ? array_search(get_class($commentable), Relation::morphMap()) : get_class($commentable));
             });
 
         return $this;
