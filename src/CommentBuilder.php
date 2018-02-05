@@ -72,7 +72,7 @@ class CommentBuilder
         $data = [
             'user_id'          => $this->user,
             'commentable_id'   => $this->commentable->id,
-            'commentable_type' => Relation::getMorphedModel(get_class($this->commentable)) ?? get_class($this->commentable),
+            'commentable_type' => in_array(__CLASS__, Relation::morphMap()) ? array_search(__CLASS__, Relation::morphMap()) : __CLASS__,
         ];
 
         $commentModel = config('commentable.comment');
