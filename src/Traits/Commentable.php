@@ -3,7 +3,6 @@
 namespace Yoeunes\Commentable\Traits;
 
 use Yoeunes\Commentable\CommentBuilder;
-use Yoeunes\Commentable\Models\Comment;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Query\JoinClause;
 use Yoeunes\Commentable\CommentQueryBuilder;
@@ -18,7 +17,7 @@ trait Commentable
      */
     public function comments()
     {
-        return $this->morphMany(Comment::class, 'commentable');
+        return $this->morphMany(config('commentable.comment'), 'commentable');
     }
 
     public function commentsCount()

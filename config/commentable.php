@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'comment'        => Yoeunes\Commentable\Models\Comment::class,
     'user'           => App\User::class,
     'auth_user'      => true,
 

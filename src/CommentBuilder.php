@@ -75,7 +75,9 @@ class CommentBuilder
             'commentable_type' => Relation::getMorphedModel(get_class($this->commentable)) ?? get_class($this->commentable),
         ];
 
-        $comment = (new Comment())->fill($data);
+        $commentModel = config('commentable.comment');
+
+        $comment = (new $commentModel)->fill($data);
 
         $comment->comment = $body;
 
