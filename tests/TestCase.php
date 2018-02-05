@@ -5,8 +5,8 @@ namespace Yoeunes\Commentable\Tests;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Yoeunes\Commentable\Tests\Stubs\Models\User;
-use Yoeunes\Commentable\CommentableServiceProvider;
 use Orchestra\Testbench\TestCase as BaseTestCase;
+use Yoeunes\Commentable\CommentableServiceProvider;
 
 class TestCase extends BaseTestCase
 {

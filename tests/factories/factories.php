@@ -10,8 +10,8 @@ $factory(Lesson::class, [
 ]);
 
 $factory(Comment::class, [
-    'comment'        => $faker->text,
-    'user_id'       => 'factory:Yoeunes\Commentable\Tests\Stubs\Models\User',
+    'comment'          => $faker->text,
+    'user_id'          => 'factory:Yoeunes\Commentable\Tests\Stubs\Models\User',
     'commentable_id'   => 'factory:Yoeunes\Commentable\Tests\Stubs\Models\Lesson',
     'commentable_type' => Lesson::class,
 ]);
